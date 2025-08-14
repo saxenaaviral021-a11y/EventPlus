@@ -49,7 +49,7 @@ app.get("/api/events", (req, res) => {
 app.post("/api/events", (req, res) => {
   const event = { id: nextId++, rsvps: [], ...req.body };
   events.push(event);
-  res.status(201).json(event);
+  res.status(201).json(event); 
 });
 
 app.put("/api/events/:id", (req, res) => {
