@@ -39,8 +39,40 @@ app.post("/api/auth/login", (req, res) => {
 });
 
 // -------------------- EVENTS -------------------- //
-let events = [];
-let nextId = 1;
+let events = [
+  {
+    id: 1,
+    title: "Tech Conference 2025",
+    description: "A gathering of tech enthusiasts, developers, and startups.",
+    date: "2025-09-10",
+    location: "San Francisco, CA",
+    rsvps: [
+      { name: "John Doe", email: "john@example.com" }
+    ]
+  },
+  {
+    id: 2,
+    title: "Music Festival",
+    description: "Live performances from top artists around the world.",
+    date: "2025-10-15",
+    location: "Los Angeles, CA",
+    rsvps: []
+  },
+  {
+    id: 3,
+    title: "Startup Pitch Night",
+    description: "Upcoming startups pitch their ideas to investors.",
+    date: "2025-11-05",
+    location: "New York, NY",
+    rsvps: [
+      { name: "Alice Smith", email: "alice@example.com" },
+      { name: "Bob Johnson", email: "bob@example.com" }
+    ]
+  }
+];
+
+let nextId = events.length + 1;
+
 
 app.get("/api/events", (req, res) => {
   res.json(events);
